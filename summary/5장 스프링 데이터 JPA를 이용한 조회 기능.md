@@ -38,3 +38,8 @@
         ```
         
     - 만약 더 많은 스펙들을 조합해야 한다면 스펙 빌더 클래스를 사용할 수 있다.
+- 조회 시 자연스럽게 정렬에 대한 이야기가 같이 나온다. 스프링 데이터 JPA는 정렬 옵션을 두 가지 형태로 제공한다. 메서드 이름에 `OrderBy` 키워드 명시를 통한 자동 쿼리 생성과 `Sort` 타입의 파라미터를 전달하는 것이다.
+    - `OrderBy` 키워드는 프로퍼티 이름과 `ASC`, `DESC` 를 더한 문자열을 메서드 시그니처에 더해주면 된다.
+        - `findByOrdererId**OrderByNumberDescNumberAsc**`
+    - `Sort` 타입 역시 프로퍼티를 전달하고 `ascending()`, `descending()` 을 메서드 체이닝 형태로 덧붙히면 된다. 다중 조건이라면 `and()` 메서드를 활용할 수 있다.
+        - `Sort sort = Sort.by(”number”).ascending().and(Sort.by(”orderDate”).descending());`
