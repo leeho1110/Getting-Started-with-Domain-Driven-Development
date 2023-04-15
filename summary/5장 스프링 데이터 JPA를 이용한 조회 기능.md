@@ -63,3 +63,5 @@
         - `getNumber()` 를 통해 현재 페이지 번호 반환
         - `getNumberOfElements()` 를 통해 조회 결과의 개수를 반환
         - `getSize()` 를 통해 페이지 크기를 반환
+- 만약 특정 N개의 개수만 필요하다면 `find**First3**ByNameLike(String name)` 와 같은 형태로 필요한 개수(3)를 지정할 수 도 있다.
+    - `First`, `Top` 모두 가능하다.
